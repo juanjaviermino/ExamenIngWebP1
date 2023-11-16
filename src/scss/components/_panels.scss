@@ -1,0 +1,40 @@
+.panel{
+    display: none;
+    width: 100%;
+    margin: 0;
+    transition: linear 2s;
+    
+    p {
+        @include font-style(16px, 'regular', 'ddgris');
+        letter-spacing: 0.15px;
+        line-height: 36px;
+        @media (max-width: $mobile-threshold) {
+            @include font-style(15px, 'regular');
+            max-width: 300px;
+        }
+    }
+
+    @media (max-width: $mobile-threshold) {
+        @include font-style(15px, 'regular');
+        max-width: 300px;
+    }
+}
+
+#tab11:checked ~ .accordion .accordion__tab #panel1,
+#tab22:checked ~ .accordion .accordion__tab #panel2, 
+#tab33:checked ~ .accordion .accordion__tab #panel3, 
+#tab44:checked ~ .accordion .accordion__tab #panel4{
+    @include flex(center, center);
+}
+
+#tab11:checked ~ .accordion .accordion__tab label[for="tab11"] .fa-chevron-down,
+#tab22:checked ~ .accordion .accordion__tab label[for="tab22"] .fa-chevron-down,
+#tab33:checked ~ .accordion .accordion__tab label[for="tab33"] .fa-chevron-down,
+#tab44:checked ~ .accordion .accordion__tab label[for="tab44"] .fa-chevron-down {
+    color: $red-color;
+    transform: rotate(180deg); /* This is just an example */
+}
+
+
+
+

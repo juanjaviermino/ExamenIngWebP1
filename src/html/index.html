@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark Landing Page: Examen JJMA</title>
+    <!-- Link to your stylesheet -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body class="body">
+    
+    <header class="header">
+        <nav class="header__nav">
+            <div id="logoNormal" class="header__logo">
+                <img src="../assets/logo.png" alt="Logo" height="25px" width="25px">
+                <a href="#">BOOKMARK</a>
+            </div>
+            <ul class="header__nav-links">
+                <li><a href="#" class="header__nav-link">Features</a></li>
+                <li><a href="#" class="header__nav-link">Pricing</a></li>
+                <li><a href="#" class="header__nav-link">Contact</a></li>
+                <li><button class="button--login">Login</button></li>
+            </ul>
+            <div onclick="toggleMenu(event)" id="burgermenu" class="header__menu-icon">
+                <button class="button--bgmenu">
+                    <i class="fa-solid fa-bars" style="font-size: 20px"></i>
+                </button> 
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <menu id="floatingmenu" class="menu">
+            <div class="menu__header">
+                <div class="menu__logo">
+                    <img src="../assets/alt-logo.png" alt="Logo" height="25px" width="25px">
+                    <a href="#">BOOKMARK</a>
+                </div>
+                <div class="menu__menu-icon">
+                    <button id="closeMenu" onclick="toggleMenu(event)" class="button--bgmenu">
+                        <i class="fa-sharp fa-solid fa-xmark" style="font-size: 22px; color: white"></i>
+                    </button> 
+                </div>
+            </div>
+            
+            <ul class="menu__options">
+                <li  class="menu__options-item">
+                    <span> Features </span>
+                </li>
+                <li class="menu__options-item">
+                    <span> Pricing </span>
+                </li>
+                <li class="menu__options-item">
+                    <span> Contact </span>
+                </li>
+            </ul>
+            <button class="button--tertiary-login">Login</button>
+            <div class="menu__socials">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+            </div>
+        </menu>
+
+        <section class="firstsection">
+            <div class="firstsection__info">
+                <h1>A Simple Bookmark Manager</h1>
+                <p>A clean and simple interface to organize your favorite websites. Open a new browser tab and see your sites load instantly. Try it for free.</p>
+                <div class="firstsection__buttons">
+                    <button class="button--primary">Get it on Chrome</button>
+                    <button class="button--secondary">Get it on Firefox</button>
+                </div>
+            </div>
+            <div class="firstsection__art">
+                <img src="../assets/arte1.svg" alt="Bookmark Manager on a Tablet">
+                <figure class="figure--right"></figure>
+            </div>
+        </section>
+
+        <section class="secondsection">
+            <div class="secondsection__info">
+                <h2>Features</h2>
+                <p>Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go.</p>
+            </div>
+            <div class="secondsection__tabs">
+                <input type="radio" id="tab1" name="css-tabs" class="button--radio" checked>
+                <input type="radio" id="tab2" name="css-tabs" class="button--radio">
+                <input type="radio" id="tab3" name="css-tabs" class="button--radio">
+
+
+                <ul class="tabs">
+                    <li class="tabs__tab"><label for="tab1"><span>Simple Bookmarking</span></label></li>
+                    <li class="tabs__tab"><label for="tab2"><span>Speedy Searching</span></label></li>
+                    <li class="tabs__tab"><label for="tab3"><span>Easy Sharing</span></label></li>
+                </ul>
+
+                <section id="bookmarking" class="tab-content">
+                    <div class="tab-content-art">
+                        <img src="../assets/arte2.svg" alt="Bookmark Manager on a Tablet">
+                        <figure class="figure--left"></figure>
+                    </div>
+                    <div class="tab-content-info">
+                        <h1>Bookmark in one click</h1>
+                        <p>Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favourite sites.</p>
+                        <button class="button--primary">More info</button>
+                    </div>
+                </section>
+                
+                <section id="searching" class="tab-content">
+                    <div class="tab-content-art">
+                        <img id="intelligentImg" src="../assets/arte3.svg" alt="Intelligent search">
+                        <figure class="figure--left"></figure>
+                    </div>
+                    <div class="tab-content-info">
+                        <h1>Intelligent search</h1>
+                        <p>Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your bookmarks.</p>
+                        <button class="button--primary">More info</button>
+                    </div>
+                </section>
+                
+                <section id="sharing" class="tab-content">
+                    <div class="tab-content-art">
+                        <img id="sharingImg" src="../assets/arte4.svg" alt="Bookmark sharing">
+                        <figure class="figure--left"></figure>
+                    </div>
+                    <div class="tab-content-info">
+                        <h1>Share your bookmarks</h1>
+                        <p>Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button.</p>
+                        <button class="button--primary">More info</button>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <section class="thirdsection">
+            <div class="secondsection__info">
+                <h2>Download the extension</h2>
+                <p>We’ve got more browsers in the pipeline. Please do let us know if you’ve got a favourite you’d like us to prioritize.</p>
+            </div>
+            <div class="thirdsection-cards">
+                <div id="cardcr" class="thirdsection-cards--card">
+                    <img src="../assets/chrome.svg" alt="Chrome logo">
+                    <h3>Add to Chrome</h3>
+                    <p>Minimum version 62</p>
+                    <hr class="separator--dotter" />
+                    <button style="min-width: 232px; min-height: 48px; margin-top: auto; margin-bottom: 20px;" class="button--primary">Add & Install Extension</button>
+                </div>
+                <div id="cardff" class="thirdsection-cards--card">
+                    <img src="../assets/firefox.svg" alt="Firefox logo">
+                    <h3>Add to Firefox</h3>
+                    <p>Minimum version 55</p>
+                    <hr class="separator--dotter" />
+                    <button style="min-width: 232px; min-height: 48px; margin-top: auto; margin-bottom: 20px;" class="button--primary">Add & Install Extension</button>
+                </div>
+                <div id="cardop" class="thirdsection-cards--card">
+                    <img src="../assets/opera.svg" alt="Opera logo">
+                    <h3>Add to Opera</h3>
+                    <p>Minimum version 46</p>
+                    <hr class="separator--dotter" />
+                    <button style="min-width: 232px; min-height: 48px; margin-top: auto; margin-bottom: 20px;" class="button--primary">Add & Install Extension</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="fourthsection">
+            <div class="secondsection__info">
+                <h2>Frequently Asked Questions</h2>
+                <p>Here are some of our FAQs. If you have any other questions you’d like answered please feel free to email us.</p>
+            </div>
+            <div class="fourthsection--content">
+                <section class="fourthsection__menu">
+                    <!-- Radio Buttons -->
+                    <input type="radio" id="tab11" name="css-tabs" class="button--radio">
+                    <input type="radio" id="tab22" name="css-tabs" class="button--radio">
+                    <input type="radio" id="tab33" name="css-tabs" class="button--radio">
+                    <input type="radio" id="tab44" name="css-tabs" class="button--radio">
+                
+                    <!-- Accordion Tabs -->
+                    <ul class="accordion">
+                        <li class="accordion__tab">
+                            <label for="tab11" class="fourthsection--menu-item">
+                                <span> What is Bookmark? </span>
+                                <i class="fa-sharp fa-solid fa-chevron-down"></i>
+                            </label>
+                            <div id="panel1" class="panel">
+                                <p>Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
+                                    ultricies non ligula. Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.</p>
+                            </div>
+                        </li>
+                        <li class="accordion__tab">
+                            <label for="tab22" class="fourthsection--menu-item">
+                                <span> How can I request a new browser? </span>
+                                <i class="fa-sharp fa-solid fa-chevron-down"></i>
+                            </label>
+                            <div id="panel2" class="panel">
+                                <p>Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
+                                    ultricies non ligula. Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.</p>
+                            </div>
+                        </li>
+                        <li class="accordion__tab">
+                            <label for="tab33" class="fourthsection--menu-item">
+                                <span> Is there a mobile app? </span>
+                                <i class="fa-sharp fa-solid fa-chevron-down"></i>
+                            </label>
+                            <div id="panel3" class="panel">
+                                <p>Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
+                                    ultricies non ligula. Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.</p>
+                            </div>
+                        </li>
+                        <li class="accordion__tab">
+                            <label for="tab44" class="fourthsection--menu-item">
+                                <span> What about other Chromium browsers? </span>
+                                <i class="fa-sharp fa-solid fa-chevron-down"></i>
+                            </label>
+                            <div id="panel4" class="panel">
+                                <p>Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
+                                    ultricies non ligula. Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.</p>
+                            </div>
+                        </li>
+                        <!-- Repeat for other items -->
+                    </ul>
+                </section>                
+                <button class="button--primary">More Info</button>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <section class="footer-contact">
+            <p>35,000+ ALREADY JOINED</p>
+            <h2>Stay up-to-date with what we’re doing</h2>
+            <form id="emailForm" submit="validateEmail" class="footer-contact__inputs">
+                <div id="emailInputContainer" class="input-container">
+                    <div class="input-container__input">
+                        <input id="emailInput" type="email" placeholder="Enter your email address" />
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                    </div>
+                    <span>Whoops, make sure it’s an email</span>
+                </div>
+                <button class="button--tertiary">Contact Us</button>
+            </form>
+        </section>
+        <section class="footer-links">
+            <div class="footer-links__links">
+                <div class="header__logo">
+                    <img src="../assets/logo.png" alt="Logo" height="25px" width="25px">
+                    <a href="#" style="color: white">BOOKMARK</a>
+                </div>
+                <ul class="footer__nav-links">
+                    <li><a href="#" class="footer__nav-link">Features</a></li>
+                    <li><a href="#" class="footer__nav-link">Pricing</a></li>
+                    <li><a href="#" class="footer__nav-link">Contact</a></li>
+                </ul>
+            </div>
+            <diV class="footer-links__socials">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+            </diV>
+        </section>
+    </footer>
+    <script src="../javascript/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+.footer{
+    @include grid(3,1);
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 358px auto;
+    &__nav { 
+        width: 100%;
+        @include flex-row(space-between, center);
+        padding: 0 $app-padding;
+
+        &-links { // Element inside nav
+            @include flex-row(center, center);
+            gap: 30px;
+
+            li {
+                list-style-type: none;
+            }
+            @media (max-width: $mobile-threshold) {
+                @include flex-column(center, center); // This will hide the .header__nav element
+                padding: 0;
+            }
+        }
+
+        &-link { // Element inside nav
+            text-transform: uppercase;
+            @include font-style(13px, 'regular', 'blan');
+            letter-spacing: 1.5px;
+            @media (max-width: $mobile-threshold) {
+                @include flex-column(center, center); // This will hide the .header__nav element
+                @include font-style(15px, 'regular', 'blan');
+                letter-spacing: 1.73px;
+            }
+            
+            &:hover{
+                color: $red-color;
+            }
+        }
+    }
+
+    &-contact{
+        background-color: $lightblue-color;
+        @include grid(1,1);
+        @include flex-column(center, center);
+        
+        p {
+            @include font-style(13px, 'medium', 'blan');
+            letter-spacing: 5px;
+            @media (max-width: $mobile-threshold) {
+                @include font-style(12px, 'medium', 'blan');
+            }
+        }
+
+        h2 {
+            @include font-style(32px, 'medium', 'blan');
+            letter-spacing: -0.1px;
+            text-align: center;
+            max-width: 408px;
+            @media (max-width: $mobile-threshold) {
+                @include font-style(24px, 'medium', 'blan');
+                max-width: 310px;
+            }
+        }
+
+        &__inputs{
+            @include flex-row();
+            gap: 20px;
+            
+            @media (max-width: $mobile-threshold) {
+                @include flex-column();
+            }
+        }
+    }
+
+    &-links{
+        @include grid(2,1);
+        min-height: 90px;
+        width: 100%;
+        background-color: $blue-color;
+        @include flex-row(space-between, center);
+        padding: 0 $app-padding;
+
+        @media (max-width: $mobile-threshold) {
+            @include flex-column(center, center);
+            padding: 30px 0;
+        }
+
+        &__links{
+            @include flex-row($align: center);
+
+            @media (max-width: $mobile-threshold) {
+                @include flex-column(center, center);
+            }
+
+            gap: 20px;
+        }
+
+        &__socials{
+            @include flex-row($align: center);
+            gap: 20px;
+
+            @media (max-width: $mobile-threshold) {
+                margin-top: 15px;
+            }
+
+            i {
+                color: $white-color;
+                font-size: 25px;
+                &:hover{
+                    cursor: pointer;
+                    color: $red-color;
+                }
+            }
+        }
+
+    }
+}

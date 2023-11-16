@@ -1,0 +1,293 @@
+.firstsection {
+    @include grid(1,1);
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 85vh;
+
+    &__info{
+        @include grid(1, 1);
+        @include flex-column(center, start);
+        padding-left: $app-padding;
+        @media (max-width: $mobile-threshold) {
+            @include grid(2, 1);
+            @include flex-column(center, center);
+            padding-left: 0;
+        }
+
+        h1{
+            margin-right: 20%;
+            margin-bottom: 0;
+            letter-spacing: -0.15px;
+            @include font-style(48px, 'medium');
+            @media (max-width: $mobile-threshold) {
+                @include font-style(30px, 'medium');
+                text-align: center;
+                margin-right: 0;
+                max-width: 310px;
+            }
+        }
+
+        p{
+            margin-right: 10%;
+            @include font-style(18px, 'regular', 'gris');
+            @media (max-width: $mobile-threshold) {
+                @include font-style(15px, 'regular', 'gris');
+                text-align: center;
+                margin-right: 0;
+                max-width: 310px;
+            }
+        }
+    }
+
+    &__buttons{
+        @include flex-row(start, center);
+        gap: 15px;
+        width: 100%;
+        @media (max-width: $mobile-threshold) {
+            @include flex-row(center, center);
+        }
+    }
+
+    &__art{
+        position: relative;
+        @include grid(1, 2);
+        @media (max-width: $mobile-threshold) {
+            @include grid(1, 1);
+            padding-left: $app-padding;
+        }
+
+        img{
+            position: absolute;
+            right: 10%;
+            bottom: 25%;
+            width: 80%;
+            max-width: 80%;
+            @media (max-width: $mobile-threshold) {
+                width: 80%;
+                max-width: 300px;
+            }
+        }
+    }
+
+    @media (max-width: $mobile-threshold) {
+        grid-template-columns: 100%;
+        grid-template-rows: 42.5vh 45vh;
+    }
+}
+
+@mixin figure-shape{
+    display: block;
+    position: absolute;
+    z-index: -1;
+    background-color: $lightblue-color;
+    height: 60%;
+    width: 70%;
+    margin: 0 0 8% 0;
+    bottom: 0;
+}
+
+.figure{
+
+    &--right{
+        @include figure-shape();
+        right: 0;
+        border-radius: 200px 0 0 200px;
+    }
+
+    &--left{
+        @include figure-shape();
+        left: 0;
+        border-radius: 0 200px 200px 0;
+    }
+
+    @media (max-width: $mobile-threshold) {
+        max-width: 300px;
+    }
+}
+
+.secondsection{
+    @include grid(2,1);
+    overflow: hidden;
+    @include flex-column(center, center);
+    &__info{
+        padding: 20px 0;
+        width: 100%;
+        @include flex-column(center, center);
+
+        h2 {
+            @include font-style(32px, 'medium', 'azul');
+            margin-bottom: 0;
+            @media (max-width: $mobile-threshold) {
+                margin-top: 100px;
+                @include font-style(24px, 'medium', 'azul');
+            }
+        }
+
+        p {
+            @include font-style(18px, 'regular', 'gris');
+            max-width: 540px;
+            text-align: center;
+            margin-bottom: 30px;
+            @media (max-width: $mobile-threshold) {
+                max-width: 310px;
+            }
+        }
+    }
+
+    &__tabs{
+        @include flex-column(center, center);
+        &[type="radio"]{
+            display: none;
+        }
+        position: relative;
+        width: 100%;
+        padding: 20px 0;
+        @media (max-width: $mobile-threshold) {
+            @include flex-column(center, center);
+        }
+    }
+
+    &__radiobuttons{
+        position: absolute;
+        z-index: 8;
+        height: 100%;
+        @include flex-row(space-between, center);
+    }
+}
+
+.thirdsection{
+    @include grid(3,1);
+    &-cards{
+        @include flex-row(center);
+        @media (max-width: $mobile-threshold) {
+            @include flex-column(center, center);
+        }
+        gap: 30px;
+        &--card{
+            
+            @include shadow;
+            @include flex-column(center, center);
+            background-color: transparent;
+            border: 0;
+            border-radius: 15px;
+            height: 370px;
+            width: 280px;
+
+            img {
+                width: 100px;
+                height: 100px;
+                min-width: 100px;
+                min-height: 100px;
+                margin-top: 40px;
+            }
+
+            h3 {
+                @include font-style(20px, 'medium');
+                margin-bottom: 0;
+            }
+
+            p {
+                @include font-style(15px, 'regular', 'gris');
+            }
+            
+        }
+    }
+}
+
+.separator--dotter {
+    border: 0;
+    border-bottom: 4px dotted $bordergray-color;
+    width: 0;
+    animation: separator-width 1.5s ease-out forwards;
+    margin-top: 40px;
+    margin-bottom: 0;
+}
+
+
+@keyframes separator-width {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+}
+
+#cardcr{
+    margin-top: 10px;
+    @media (max-width: $mobile-threshold) {
+        margin-top: 0;
+    }
+}
+
+#cardff{
+    margin-top: 100px;
+    @media (max-width: $mobile-threshold) {
+        margin-top: 0;
+    }
+}
+
+#cardop{
+    margin-top: 190px;
+    margin-bottom: 60px;
+    @media (max-width: $mobile-threshold) {
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+}
+
+.fourthsection {
+    @include grid(4,1);
+    &--content{
+        @include flex-column(center, center);
+        gap: 50px;
+        margin: 40px 0;
+    }
+
+    &--menu{
+        width: 540px;
+        max-width: 540px;
+        margin-top: 20px;
+        padding: 0;
+
+        @media (max-width: $mobile-threshold) {
+            width: 310px;
+            max-width: 310px;
+        }
+        
+
+        &-item {
+            height: 64px;
+            @include flex-row(space-between, center);
+            border-bottom: 2px solid $bordergray-color;
+            
+            &:hover{
+                cursor: pointer;
+                span {
+                    color: $red-color;
+                }
+            }
+
+            &:first-child {
+                border-top: 2px solid $bordergray-color;
+            }
+
+            span {
+                @include font-style(18px, 'regular');
+                @media (max-width: $mobile-threshold) {
+                    @include font-style(15px, 'regular');
+                }
+            }
+
+            i {
+                font-size: 18px;
+                color: $lightblue-color;
+                margin-right: 20px;
+                @media (max-width: $mobile-threshold) {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+  

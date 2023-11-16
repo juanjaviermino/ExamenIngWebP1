@@ -1,0 +1,45 @@
+.input-container{
+    @include flex-column(start);
+    
+    &__input {
+        @include flex($align:center);
+        position: relative;
+        border-radius: 5px 5px 0 0;
+        border: none;
+        background-color: transparent;
+
+        input {
+            
+            height: 40px;
+            width: 300px;
+            @include font-style(14px, 'regular', 'azul');
+            background-color: $white-color;
+            border: 0;
+            border-radius: 5px;
+            outline: none;
+            padding-left: 20px;
+
+            &::placeholder {
+                color: $gray-color;
+            }
+        }
+
+        i {
+            display: none;
+            position: absolute;
+            z-index: 1;
+            right: 15px;
+            color: $red-color;
+        }
+    }
+
+    span {
+        display: none;
+        padding: 2px 0 0 15px;
+        background-color: $red-color;
+        height: 22px;
+        @include font-style(10px, 'medium', 'blan');
+        font-style: italic;
+        border-radius: 0 0 5px 5px;
+    }
+}

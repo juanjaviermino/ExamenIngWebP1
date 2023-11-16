@@ -1,0 +1,93 @@
+@mixin btn-shape($color: null){
+    height: 40px;
+    background-color: $color;
+    border: solid $color 3px;
+    border-radius: 5px;
+    @include shadow;
+}
+
+@mixin btn-hover($color: null){
+    &:hover{
+        background-color: white;
+        color: $color;
+        cursor: pointer;
+    }
+}
+
+.button {
+    &--login{
+        width: 110px;
+        min-width: 80px;
+        text-transform: uppercase;
+        @include font-style(13px, 'medium', 'blan');
+        @include btn-shape($red-color);
+        @include btn-hover($red-color);
+        letter-spacing: 1.5px;
+    }
+
+    &--bgmenu{
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background-color: transparent;
+    }
+
+    &--primary{
+        @include font-style(14px, 'medium', 'blan');
+        @include btn-shape($lightblue-color);
+        @include btn-hover($lightblue-color);
+        padding: 0 20px;
+    }
+
+    &--secondary{
+        @include font-style(14px, 'medium', 'dgris');
+        @include btn-shape($lightgray-color);
+        &:hover{
+            border: solid $darkgray-color 3px;
+            background-color: transparent;
+            color: $darkgray-color;
+            cursor: pointer;
+        }
+    }
+
+    &--tertiary{
+        width: 110px;
+        min-width: 80px;
+        @include font-style(14px, 'medium', 'blan');
+        @include btn-shape($red-color);
+        @include btn-hover($red-color);
+        @media (max-width: $mobile-threshold) {
+            width: 100%;
+        }
+    }
+
+    &--tertiary-login{
+        width: 110px;
+        min-width: 80px;
+        text-transform: uppercase;
+        @include font-style(20px, 'medium', 'blan');
+        height: 48px;
+        background-color: transparent;
+        border: solid $white-color 3px;
+        border-radius: 5px;
+        width: 100%;
+    }
+
+
+    &--radio{
+        display: none;
+        
+    }
+}
+
+#tab1:checked ~ .secondsection__tabs .tab-content#bookmarking,
+#tab2:checked ~ .secondsection__tabs .tab-content#searching,
+#tab3:checked ~ .secondsection__tabs .tab-content#sharing {
+    display: grid; // or 'grid' or your preferred display method
+}
+
+#bookmarkingbtn{
+    @media (max-width: $mobile-threshold) {
+        border-top: 2px solid $bordergray-color;
+    }
+}
