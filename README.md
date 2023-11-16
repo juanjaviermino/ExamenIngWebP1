@@ -9,4 +9,4 @@ Este proyecto es una landing page responsive diseñada y desarrollada para cumpl
 - Metodología BEM: Aplicación de la metodología BEM (Block, Element, Modifier) para nombrar las clases CSS de forma que mejora la legibilidad y reusabilidad del código.
 
 ### Visualización del Proyecto:
-Puedes ver el proyecto en acción visitando [URL de tu página en vivo] .
+Puedes ver el proyecto en acción visitando [https://juanjaviermino.github.io/ExamenIngWebP1/src/html/] .
